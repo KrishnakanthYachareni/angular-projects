@@ -1,4 +1,4 @@
-# angular-projects
+# angular-Learning
 
 ## Angular Installation Instructions
 
