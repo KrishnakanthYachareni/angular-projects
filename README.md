@@ -35,3 +35,7 @@ This has the extra data defined for the Angular class. It is defined with a deco
 ```
 ng generate component folder/component-name or only component-name
 ```
+or with shortcuts
+```
+ng g c folder/component-name or only component-name
+```
