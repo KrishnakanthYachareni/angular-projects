@@ -1,5 +1,5 @@
 
-## Angular Installation Instructions
+## Angular Installation
 
 1. Node Js (Path automatically sets)
 2. Install Typescript 
