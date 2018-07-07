@@ -39,3 +39,55 @@ or with shortcuts
 ```
 ng g c folder/component-name or only component-name
 ```
+### ngFor
+NgFor is a structural directive, meaning that it changes the structure of the DOM.
+It’s point is to repeat a given HTML template once for each value in an array, each time passing it the array value as context for string interpolation or binding.
+```
+@Component({
+  selector: 'ngfor-example',
+  template: `
+ <ul>
+  <li *ngFor="let person of people"> 
+    {{ person.name }}
+  </li>
+ </ul>
+ `
+})
+class NgForExampleComponent {
+  people: any[] = [
+    {
+      "name": "Krishnakanth  Yachareni"
+    },
+    {
+      "name": "Srikanth  Yachareni"
+    }
+  ];
+}
+```
+### ngModel
+The ```ngModel``` directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive. ```ngModel``` is responsible for:
+* Binding the view into the model, which other directives such as input, textarea or select require.
+* Providing validation behavior (i.e. required, number, email, url).
+* Keeping the state of the control (valid/invalid, dirty/pristine, touched/untouched, validation errors).
+* Setting related css classes on the element (ng-valid, ng-invalid, ng-dirty, ng-pristine, ng-touched, ng-untouched, ng-empty, ng-not-empty) including animations.
+* Registering the control with its parent form.
+```
+import {Component} from '@angular/core';
+ 
+@Component({
+  selector: 'example-app',
+  template: `
+    <input [(ngModel)]="name" #ctrl="ngModel" required>
+ 
+    <p>Value: {{ name }}</p>
+    <p>Valid: {{ ctrl.valid }}</p>
+    
+    <button (click)="setValue()">Set value</button>
+  `,
+})
+export class SimpleNgModelComp {
+  name: string = '';
+ 
+  setValue() { this.name = 'Krishnaknth'; }
+}
+```
