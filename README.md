@@ -4,7 +4,13 @@
 1. Node Js (Path automatically sets)
 2. Install Typescript 
 ```npm install -g typescript```
-3. Download bootstrap(Unzip it)
+3. Download bootstrap(Unzip it) and then copy ```bootstrap.css``` file into your angular appliucation ```/app-name``` folder after that edit ```angular.json or angular-cli.json``` file
+```
+"styles": [
+              "src/styles.css",
+              "src/bootstrap.css"
+            ],
+```
 4. Install Angular Cli
 ```npm install  -g @angular/cli```
 5. Install Visual Studio Code / Atom IDE. and then
