@@ -64,30 +64,33 @@ class NgForExampleComponent {
   ];
 }
 ```
-### ngModel
-The ```ngModel``` directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive. ```ngModel``` is responsible for:
-* Binding the view into the model, which other directives such as input, textarea or select require.
-* Providing validation behavior (i.e. required, number, email, url).
-* Keeping the state of the control (valid/invalid, dirty/pristine, touched/untouched, validation errors).
-* Setting related css classes on the element (ng-valid, ng-invalid, ng-dirty, ng-pristine, ng-touched, ng-untouched, ng-empty, ng-not-empty) including animations.
-* Registering the control with its parent form.
+## Various forms of Binding in Angular
+
+1. **Interpolation syntax**
+
 ```
-import {Component} from '@angular/core';
- 
-@Component({
-  selector: 'example-app',
-  template: `
-    <input [(ngModel)]="name" #ctrl="ngModel" required>
- 
-    <p>Value: {{ name }}</p>
-    <p>Valid: {{ ctrl.valid }}</p>
-    
-    <button (click)="setValue()">Set value</button>
-  `,
-})
-export class SimpleNgModelComp {
-  name: string = '';
- 
-  setValue() { this.name = 'Krishnaknth'; }
-}
+{{ expression }}
 ```
+We can use this any where in HTML page. Like
+```
+<div>{{ "Hello There!" }} </div>
+<div style="background-color: {{ bgcolor }}">Hi!</div>
+```
+
+2. **InBinding**
+```
+[var]="expression"
+```
+This is passed to our Components via ``` @Input``` attribute.
+
+3. **OutBinding / events**
+```
+(event) = "doTheThing()"
+```
+This is how we listen to events from other elements.
+
+4. **Two-Way Binding**
+```
+[(ngModel)]="expression"
+```
+Two-way binding--value sent to variable and updated as variabale changes.
